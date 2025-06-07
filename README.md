@@ -1,7 +1,8 @@
 # Automatic Color-Based Sorting System with Conveyor
 
-![Conveyor]([assets\Conveyor.jpg](https://github.com/Vannobble/Automatic-Sorting-Tomato/blob/main/assets/Conveyor.jpg))
-![Conveyor1]([assets\Conveyor1.jpg](https://github.com/Vannobble/Automatic-Sorting-Tomato/blob/main/assets/Conveyor1.jpg))
+![Conveyor](https://raw.githubusercontent.com/Vannobble/Automatic-Sorting-Tomato/main/assets/Conveyor.jpg)
+![Conveyor1](https://raw.githubusercontent.com/Vannobble/Automatic-Sorting-Tomato/main/assets/Conveyor1.jpg)
+
 
 ## Project Domain
 
