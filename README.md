@@ -1,7 +1,7 @@
 # Automatic Color-Based Sorting System with Conveyor
 
-![auto-img](assets\Conveyor.jpg)
-![auto-img](assets\Conveyor1.jpg)
+![Conveyor](assets\Conveyor.jpg)
+![Conveyor](assets\Conveyor1.jpg)
 
 ## Project Domain
 
