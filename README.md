@@ -1,10 +1,7 @@
-Berikut adalah README GitHub yang disesuaikan untuk proyekmu berdasarkan format yang kamu berikan. Judul dan kontennya disesuaikan dengan sistem **Deteksi Warna Otomatis dengan TCS34725, TCA9548A, dan Servo**.
+# Automatic Color-Based Sorting System with Conveyor
 
----
-
-# Automatic Color-Based Sorting System with TCS34725 and Servo
-
-![auto-img](assets/color-sorting-system.jpg)
+![auto-img](assets\Conveyor.jpg)
+![auto-img](assets\Conveyor1.jpg)
 
 ## Project Domain
 
@@ -15,20 +12,30 @@ This project focuses on a real-time IoT-based object color classification and so
 * Manual sorting based on color is inefficient, time-consuming, and prone to human error.
 * Need for a low-cost and scalable solution for object classification in educational or small-scale industrial settings.
 * Difficulty in handling multiple I2C color sensors simultaneously due to address conflicts.
+* Single-sensor classification may be inaccurate due to lighting variation, noise, or sensor failure.
 
 ### Goals
 
 * Detect and classify objects based on their color using multiple TCS34725 sensors.
-* Use majority voting from multiple sensors to increase classification accuracy.
+* Use majority voting from multiple sensors to increase classification accuracy and fault tolerance.
 * Activate a servo motor to perform an action (e.g., sorting, signaling) when a specific color is detected.
 
 ### Solution Statements
 
 * Use TCS34725 sensors to obtain RGB and clear values from detected objects.
 * Implement a TCA9548A I2C multiplexer to control multiple identical I2C sensors.
-* Apply color classification logic and majority voting to determine the dominant object color.
+* Apply color classification logic and **majority voting (fault tolerant system)** to determine the dominant object color from all sensor inputs.
 * Control a servo motor to respond to detected color (e.g., move when red is detected).
 * Display sensor data and classifications through Serial Monitor for evaluation and debugging.
+
+## Fault Tolerance Mechanism
+
+To ensure the system is robust against false readings from any single sensor, this project includes:
+
+* **Redundancy**: Three sensors observe the same object simultaneously.
+* **Majority Vote Logic**: The system compares classifications from all sensors. If at least **two sensors agree on the same color**, that classification is considered correct.
+* **Fallback Handling**: If fewer than two sensors detect an object or no majority is found, the system safely assumes "No object" or "Unknown", and the actuator remains idle.
+* **Improved Accuracy**: This mechanism increases classification reliability under inconsistent lighting or partial occlusion.
 
 ## Prerequisites
 
@@ -43,24 +50,34 @@ This project focuses on a real-time IoT-based object color classification and so
 
 ### Datasheet TCS34725
 
-![Datasheet TCS34725](assets/tcs34725.jpg)
+![Datasheet TCS34725](assets/TCS.jpg)
+
+### Datasheet TCA9548A
+
+![Datasheet TCA9548A](assets/MUX.png)
 
 ### Schematic Fritzing
 
-![schematic](assets/schematic-color-sort.jpg)
+![schematic](assets/CIRKITT.png)
 
 ## Demo and Evaluation
 
 * **Setup**: Connect 3 TCS34725 sensors to the TCA9548A, wire the multiplexer to the Arduino via I2C, and attach the servo motor to a digital pin.
-* **Demo**: Place colored objects (red, green, normal) in front of the sensors. Observe the readings and servo response based on classification results.
+* **Demo**: Place Tomato (ripe, raw) in front of the sensors. Observe the readings and servo response based on classification results.
 * **Evaluation**: Verify sensor consistency, classification accuracy, and servo response timing. Modify classification thresholds as needed based on environment and object reflectivity.
 
-[Demo Video / Project Preview (Optional)](https://github.com/user-attachments/assets/9ddc3a71-bdd0-4ae9-9dad-f0930a42f8fc)
+[Demo Video / Project Preview](assets\Demo.mp4)
 
 ## Conclusion
 
-This project demonstrates a simple, efficient, and scalable system for color-based object classification and response using multiple TCS34725 sensors and an Arduino. The integration of a TCA9548A multiplexer solves I2C address conflicts, and the majority-vote logic enhances reliability. This system can be expanded to automate sorting tasks in educational demonstrations or embedded applications.
+This project demonstrates a simple, efficient, and scalable system for color-based object classification and response using multiple TCS34725 sensors and an Arduino. The integration of a TCA9548A multiplexer solves I2C address conflicts, and the **majority-vote fault-tolerant logic** enhances system reliability. This system can be expanded to automate sorting tasks in educational demonstrations or embedded applications.
 
 ---
 
-Jika kamu memiliki gambar Fritzing atau dokumentasi lain (foto proyek, wiring, atau video demo), tinggal tambahkan ke folder `assets` di repo GitHub kamu. Jika ingin saya bantu buat gambar atau diagramnya, tinggal bilang ya!
+## Members & Identification
+
+* **Dos Hansel Sihombing** – 235150301111001
+* **Reditya Imanuel Yuwono** – 235150301111007  
+* **Muchammad Ryan Afif** – 235150301111008  
+* **Daffa Fawwaz Garibaldi** – 235150307111011  
+* **Khalisa Nur Safira** – 235150307111012
