@@ -57,7 +57,7 @@ To ensure the system is robust against false readings from any single sensor, th
 
 ![Datasheet TCA9548A](assets/MUX.png)
 
-### Schematic Fritzing
+### Schematic Diagram
 
 ![schematic](assets/CIRKITT.png)
 
@@ -68,7 +68,6 @@ To ensure the system is robust against false readings from any single sensor, th
 * **Evaluation**: Verify sensor consistency, classification accuracy, and servo response timing. Modify classification thresholds as needed based on environment and object reflectivity.
 
 [Demo Video / Project Preview](https://youtu.be/FzkuUr0Q4Jc)
-
 
 
 ## Conclusion
