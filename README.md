@@ -67,7 +67,8 @@ To ensure the system is robust against false readings from any single sensor, th
 * **Demo**: Place Tomato (ripe, raw) in front of the sensors. Observe the readings and servo response based on classification results.
 * **Evaluation**: Verify sensor consistency, classification accuracy, and servo response timing. Modify classification thresholds as needed based on environment and object reflectivity.
 
-[Demo Video / Project Preview](https://github.com/Vannobble/Automatic-Sorting-Tomato/blob/main/assets/Demo.mp4)
+[Demo Video / Project Preview](https://youtu.be/FzkuUr0Q4Jc)
+
 
 
 ## Conclusion
